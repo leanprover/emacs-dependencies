@@ -1,14 +1,12 @@
-This is /tmp/mmm-mode21220Gi5/mmm-mode-20140211.2104/mmm.info, produced
-by makeinfo version 4.13 from
-/home/melpa/melpa/working/mmm-mode/mmm.texinfo.
+This is mmm.info, produced by makeinfo version 4.8 from mmm.texinfo.
 
 INFO-DIR-SECTION GNU Emacs Lisp
 START-INFO-DIR-ENTRY
 * MMM-Mode: (mmm).                 Multiple Major Modes for Emacs
 END-INFO-DIR-ENTRY
 
-   This is edition 0.5.1 of the MMM Mode Manual, last updated 28
-October 2012. It documents version 0.5.1 of MMM Mode.
+   This is edition 0.5.2 of the MMM Mode Manual, last updated 11 June
+2015. It documents version 0.5.2 of MMM Mode.
 
    Copyright 2000 Michael Abraham Shulman.
 
@@ -37,8 +35,8 @@ MMM Mode
 MMM Mode is a minor mode for Emacs which allows Multiple Major Modes to
 coexist in a single buffer.
 
-   This is edition 0.5.1 of the MMM Mode Manual, last updated 28
-October 2012, which documents version 0.5.1 of MMM Mode.
+   This is edition 0.5.2 of the MMM Mode Manual, last updated 11 June
+2015, which documents version 0.5.2 of MMM Mode.
 
 * Menu:
 
@@ -203,7 +201,7 @@ following changes occur:
      dominant mode are not.
 
   2. The mode line (*note Mode Line: (emacs)Mode Line.) changes to show
-     which submode region is active. This can be configured; see *note
+     which submode region is active. This can be configured; see *Note
      Mode Line::.
 
   3. The major mode menu, both on the menu bar and the mouse popup, are
@@ -219,7 +217,7 @@ following changes occur:
      for the submode.
 
   7. The submode regions are highlighted by a background color; see
-     *note Region Coloring::.
+     *Note Region Coloring::.
 
 
    The submode regions are represented internally by Emacs Lisp objects
@@ -414,7 +412,7 @@ When MMM Mode is on, it defines a number of key bindings. By default,
 these are bound after the prefix sequence `C-c %'. Minor mode keymaps
 are supposed to use `C-c PUNCTUATION' sequences, and I find this one to
 be a good mnemonic because `%' is used by Mason to denote special tags.
-This prefix key can be customized; *note Key Bindings::.
+This prefix key can be customized; *Note Key Bindings::.
 
    There are two types of key bindings in MMM Mode: "commands" and
 "insertions". Command bindings run MMM Mode interactive functions to do
@@ -445,7 +443,7 @@ and `h' should be mnemonic.
 
    In the rest of this manual, I will assume you are using the defaults
 for the mode prefix (`C-c %') and the command and insertion modifiers.
-You can customize them, however; *note Key Bindings::.
+You can customize them, however; *Note Key Bindings::.
 
 
 File: mmm.info,  Node: Submode Classes,  Next: Selecting Classes,  Prev: MMM Minor Mode,  Up: Basics
@@ -484,7 +482,7 @@ File: mmm.info,  Node: Selecting Classes,  Next: Insertion,  Prev: Submode Class
 Submode classes that apply to a buffer come from three sources:
 mode/extension-associated classes, file-local classes, and interactive
 MMM-ification (*note Interactive::). Whenever MMM Mode is turned on in a
-buffer (*note MMM Minor Mode::, and *note Global Mode::), it inspects
+buffer (*note MMM Minor Mode::, and *Note Global Mode::), it inspects
 the value of two variables to determine which classes to automatically
 apply to the buffer. This covers the first two sources; the latter is
 covered in a later chapter.
@@ -577,7 +575,7 @@ both `cperl' and `cperl-mode' are acceptable.
 
    The universal class also defines an insertion key, `/', which
 prompts for the submode to use.  *Note Insertion::.  The universal class
-is most useful when `mmm-global-mode' is set to `t'; *note Global
+is most useful when `mmm-global-mode' is set to `t'; *Note Global
 Mode::.
 
 
@@ -616,7 +614,7 @@ submode region, and `->-' its end.
 such as `p', `%', and `i'. To avoid confusion, all the MMM Mode
 commands are bound by default to control characters (after the same
 prefix keys), such as `C-b', `C-%' and `C-r'. This is a change from
-earlier versions of MMM Mode, and can be customized; see *note Key
+earlier versions of MMM Mode, and can be customized; see *Note Key
 Bindings::.
 
    To find out what insertion keys are available, consult the
@@ -647,7 +645,7 @@ There are several commands you can use to create submode regions
 interactively, rather than by applying a submode class to a buffer.
 These commands (in particular, `mmm-ify-region'), can be useful when
 editing a file or email message containing a snippet of code in some
-other language.  Also see *note Global Classes::, for an alternate
+other language.  Also see *Note Global Classes::, for an alternate
 approach to the same problem.
 
 `C-c % C-r'
@@ -941,8 +939,8 @@ File: mmm.info,  Node: Key Bindings,  Next: Local Variables,  Prev: Mode Line,  
 3.4 Customizing the MMM Mode Key Bindings
 =========================================
 
-The default MMM Mode key bindings are explained in *note MMM Mode
-Keys::, and in *note Insertion::.  There are a couple of ways to
+The default MMM Mode key bindings are explained in *Note MMM Mode
+Keys::, and in *Note Insertion::.  There are a couple of ways to
 customize these bindings.
 
  -- User Option: mmm-mode-prefix-key
@@ -1014,7 +1012,7 @@ File: mmm.info,  Node: Changing Classes,  Next: Hooks,  Prev: Local Variables,  
 
 If you need to use MMM with a syntax for which a submode class is not
 supplied, and you have some facility with Emacs Lisp, you can write your
-own; see *note Writing Classes::.  However, sometimes you will only want
+own; see *Note Writing Classes::.  However, sometimes you will only want
 to make a slight change to one of the supplied submode classes.  You can
 do this, after that class is loaded, with the following functions.
 
@@ -1036,7 +1034,7 @@ File: mmm.info,  Node: Hooks,  Prev: Changing Classes,  Up: Customizing
 
 MMM Mode defines several hook variables (*note Hooks: (emacs)Hooks.)
 which are run at different times.  The most often used is
-`mmm-major-mode-hook' which is described in *note Major Mode Hook::,
+`mmm-major-mode-hook' which is described in *Note Major Mode Hook::,
 but there are a couple others.
 
  -- Variable: mmm-mode-hook
@@ -1060,7 +1058,7 @@ but there are a couple others.
    Submode classes also have a `:creation-hook' parameter which should
 be a function to run whenever a submode region is created with that
 class, with point at the beginning of the submode region.  This can be
-set for supplied submode classes with `mmm-set-class-parameter'; *note
+set for supplied submode classes with `mmm-set-class-parameter'; *Note
 Changing Classes::.
 
 
@@ -1105,7 +1103,7 @@ depend on what you call your Mason components and what major mode you
 use.  *Note Mode-Ext Classes::.  If you use an extension for your Mason
 files that emacs does not automatically place in your preferred HTML
 Mode, you will probably want to associate that extension with your HTML
-Mode as well; *note Choosing Modes: (emacs)Choosing Modes.  This also
+Mode as well; *Note Choosing Modes: (emacs)Choosing Modes.  This also
 goes for "special" Mason files such as autohandlers and dhandlers.
 
    The Perl mode used is controlled by the user: *Note Preferred
@@ -1330,6 +1328,7 @@ two of a code chunk, using the normal Emacs first-line mode setting
 syntax.  Note that this first-line mode setting only matches a single
 word for the mode name, and does not support the variable name setting
 of the generalized first file line syntax.
+
 
 % -*- mode: latex; mmm-noweb-code-mode: c++; -*-
 % First chunk delimiter!
@@ -1662,7 +1661,7 @@ File: mmm.info,  Node: Calculated Faces,  Next: Insertion Commands,  Prev: Calcu
 5.6 Calculating the Correct Highlight Face
 ==========================================
 
-As explained in *note Basic Classes::, the keyword `:face' should be
+As explained in *Note Basic Classes::, the keyword `:face' should be
 used to specify which of the standard submode faces (*note Region
 Coloring::) a submode region should be highlighted with under high
 decoration.  However, sometimes the function of a region can depend on
@@ -1697,7 +1696,7 @@ File: mmm.info,  Node: Insertion Commands,  Next: Region Names,  Prev: Calculate
 5.7 Specifying Insertion Commands
 =================================
 
-As described in *note Insertion::, submode classes can specify key
+As described in *Note Insertion::, submode classes can specify key
 sequences which automatically insert submode regions, with delimiters
 already in place.  This is done by the keyword argument `:insert'.  Its
 value should be a list, each element of which specifies a single
@@ -1985,7 +1984,7 @@ File: mmm.info,  Node: Function Index,  Next: Keystroke Index,  Prev: Concept In
  [index ]
 * Menu:
 
-* mmm-:                                  Hooks.                (line 15)
+* mmm-:                                  Hooks.                (line 20)
 * mmm-add-group:                         Submode Groups.       (line 15)
 * mmm-add-mode-ext-class:                Mode-Ext Classes.     (line 27)
 * mmm-add-to-group:                      Submode Groups.       (line 26)
@@ -2036,60 +2035,60 @@ File: mmm.info,  Node: Keystroke Index,  Prev: Function Index,  Up: Indices
 
 
 Tag Table:
-Node: Top1257
-Node: Overview5309
-Ref: Overview-Footnote-17806
-Node: Basic Concepts7926
-Node: Installation10287
-Node: Quick Start12286
-Node: Basics14832
-Node: MMM Minor Mode15518
-Node: Enabling MMM Mode16211
-Node: MMM Mode Keys17483
-Node: Submode Classes19754
-Node: Selecting Classes21106
-Node: File Classes21942
-Node: Mode-Ext Classes22723
-Node: Global Classes24472
-Node: Insertion25988
-Node: Re-parsing28170
-Node: Interactive28422
-Node: Global Mode31021
-Node: Major Mode Hook32987
-Node: Customizing34692
-Node: Region Coloring35432
-Node: Preferred Modes38007
-Node: Mode Line39993
-Node: Key Bindings41549
-Node: Local Variables43296
-Node: Changing Classes45102
-Node: Hooks46144
-Node: Supplied Classes47611
-Node: Mason48481
-Node: File Variables52175
-Node: Here-documents52918
-Node: Javascript54362
-Node: Embedded CSS54891
-Node: Embperl55321
-Node: ePerl55754
-Node: JSP56144
-Node: RPM56529
-Node: Noweb57211
-Node: Writing Classes60023
-Node: Basic Classes61196
-Node: Paired Delimiters63756
-Node: Region Placement65462
-Node: Submode Groups68438
-Node: Calculated Submodes70145
-Node: Calculated Faces72374
-Node: Insertion Commands74025
-Node: Region Names77137
-Node: Other Hooks78492
-Node: Delimiters80539
-Node: Misc Keywords84289
-Node: Indices84691
-Node: Concept Index84983
-Node: Function Index89150
-Node: Keystroke Index91382
+Node: Top1173
+Node: Overview5222
+Ref: Overview-Footnote-17719
+Node: Basic Concepts7839
+Node: Installation10200
+Node: Quick Start12199
+Node: Basics14745
+Node: MMM Minor Mode15431
+Node: Enabling MMM Mode16124
+Node: MMM Mode Keys17396
+Node: Submode Classes19667
+Node: Selecting Classes21019
+Node: File Classes21855
+Node: Mode-Ext Classes22636
+Node: Global Classes24385
+Node: Insertion25901
+Node: Re-parsing28083
+Node: Interactive28335
+Node: Global Mode30934
+Node: Major Mode Hook32900
+Node: Customizing34605
+Node: Region Coloring35345
+Node: Preferred Modes37920
+Node: Mode Line39906
+Node: Key Bindings41462
+Node: Local Variables43209
+Node: Changing Classes45015
+Node: Hooks46057
+Node: Supplied Classes47524
+Node: Mason48394
+Node: File Variables52088
+Node: Here-documents52831
+Node: Javascript54275
+Node: Embedded CSS54804
+Node: Embperl55234
+Node: ePerl55667
+Node: JSP56057
+Node: RPM56442
+Node: Noweb57124
+Node: Writing Classes59937
+Node: Basic Classes61110
+Node: Paired Delimiters63670
+Node: Region Placement65376
+Node: Submode Groups68352
+Node: Calculated Submodes70059
+Node: Calculated Faces72288
+Node: Insertion Commands73939
+Node: Region Names77051
+Node: Other Hooks78406
+Node: Delimiters80453
+Node: Misc Keywords84203
+Node: Indices84605
+Node: Concept Index84897
+Node: Function Index89064
+Node: Keystroke Index91296
 
 End Tag Table

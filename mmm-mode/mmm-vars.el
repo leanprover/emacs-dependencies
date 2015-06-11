@@ -299,6 +299,11 @@
     (whitespace-font-lock-mode buffer)
     (whitespace-font-lock-keywords buffer)
     (whitespace-mode buffer)
+    forward-sexp-function
+    smie-rules-function
+    smie-grammar
+    smie-forward-token-function
+    smie-backward-token-function
     )
   "Which local variables to save for major mode regions.
 Each element has the form \(VARIABLE [TYPE [MODES]]), causing VARIABLE
@@ -1027,7 +1032,7 @@ The CLASSES are all made private, i.e. non-user-visible."
 ;;}}}
 ;;{{{ Version Number
 
-(defconst mmm-version "0.5.1"
+(defconst mmm-version "0.5.2"
   "Current version of MMM Mode.")
 
 (defun mmm-version ()

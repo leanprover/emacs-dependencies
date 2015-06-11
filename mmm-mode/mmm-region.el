@@ -391,7 +391,9 @@ with point at the start of the new region."
     ;; Save evaporation type for checking later
     (overlay-put region-ovl 'mmm-evap evaporation)
     ;; Calculate priority to supersede anything already there.
-    (overlay-put region-ovl 'priority (length (mmm-overlays-at beg)))
+    ;; XXX: Actually, don't, in order not to hide the region highlighting.
+    ;; Let's try omitting the priorities and see if any problems crop up.
+    ;; (overlay-put region-ovl 'priority (length (mmm-overlays-at beg)))
     ;; Make overlays for the delimiters, with appropriate pointers.
     (when front
       (let ((front-ovl
@@ -495,7 +497,10 @@ is non-nil, don't quit if the info is already there."
       (let ((temp-buffer (mmm-make-temp-buffer (current-buffer)
                                                mmm-temp-buffer-name))
             (filename (buffer-file-name))
-            (mmm-in-temp-buffer t))
+            (mmm-in-temp-buffer t)
+            ;; Don't try to use jit-lock, it's automatically disabled
+            ;; starting with 24.4 anyway.
+            font-lock-support-mode)
         (unwind-protect
             (with-current-buffer temp-buffer
               ;; Handle stupid modes that need the file name set.
@@ -854,7 +859,7 @@ calls each respective submode's `syntax-propertize-function'."
 ;;{{{ Indentation
 
 (defvar mmm-indent-line-function 'mmm-indent-line
-  "The function to call to indent inside a primary mode region.
+  "The function to call to indent a line.
 This will be the value of `indent-line-function' for the whole
 buffer. It's supposed to delegate to the appropriate submode's
 indentation function. See `mmm-indent-line' as the starting point.")
@@ -865,8 +870,12 @@ indentation function. See `mmm-indent-line' as the starting point.")
     (save-excursion
       (back-to-indentation)
       (mmm-update-submode-region)
-      (get (or mmm-current-submode mmm-primary-mode)
-           'mmm-indent-line-function))))
+      (get
+       (if (and mmm-current-overlay
+                (> (overlay-end mmm-current-overlay) (point)))
+           mmm-current-submode
+         mmm-primary-mode)
+       'mmm-indent-line-function))))
 
 ;;}}}
 (provide 'mmm-region)
